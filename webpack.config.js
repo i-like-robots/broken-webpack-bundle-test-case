@@ -9,15 +9,18 @@ module.exports = {
           {
             loader: require.resolve("babel-loader"),
             options: {
+              // This is how to fix the problem =]
+              // See https://babeljs.io/docs/en/options#sourcetype
+              // sourceType: 'unambiguous',
               presets: [
                 [
                   "@babel/preset-env",
                   {
                     targets: {
-                        // Target a recent browser to create a smaller bundle to analyse
-                        chrome: 54
+                      // Target a recent browser to create a smaller bundle to analyse
+                      chrome: 54
                     },
-                    useBuiltIns: 'usage'
+                    useBuiltIns: "usage"
                   }
                 ]
               ]
