@@ -13,6 +13,10 @@ module.exports = {
                 [
                   "@babel/preset-env",
                   {
+                    targets: {
+                        // Target a recent browser to create a smaller bundle to analyse
+                        chrome: 54
+                    },
                     useBuiltIns: 'usage'
                   }
                 ]
@@ -25,7 +29,7 @@ module.exports = {
   },
   mode: "development",
   devtool: false,
-  entry: "./src/app.js",
+  entry: "./app/entry.js",
   output: {
     path: path.resolve("./dist"),
     filename: "[name].js"
