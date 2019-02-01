@@ -1,8 +1,17 @@
 # Broken Webpack Bundle Test
 
-This repository contains a minimal test case demonstrating how Webpack bundles may be broken when using the `useBuiltins` option of `@babel/preset-env` which injects polyfills from `core-js`.
+This repository contains a minimal test case demonstrating how JavaScript bundles created with Webpack may be broken when using the `useBuiltins` option of `@babel/preset-env`.
 
-Specifically this test case demonstrates the bundling of two CommonJS modules for a recent browser. The only polyfills injected into the bundle are for `String.prototype.padStart` and `String.prototype.padEnd`.
+This issue commonly manifests itself as (amongst others):
+
+```
+ReferenceError: exports is not defined
+```
+
+
+## About
+
+This test case is intended to bundle together two CommonJS modules and target a recent browser. The only polyfills that should be injected into the bundle from the `core-js` library are for the `String.prototype.padStart` and `String.prototype.padEnd` methods.
 
 
 ## Installation
